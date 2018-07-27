@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+<html>
+<head>
+    {% block content %}
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Team Connect - Dashboard</title>
+	<link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+	<link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet">
+	<link href="{% static 'css/datepicker3.css' %}" rel="stylesheet">
+	<link href="{% static 'css/styles.css' %}" rel="stylesheet">
+	
+	<!--Custom Font-->
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+	<!--[if lt IE 9]>
+	<script src="{% static 'js/html5shiv.js' %}"></script>
+	<script src="{% static 'js/respond.min.js' %}"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    {% endblock content %}
+</head>
+<body style="overflow-x: hidden !important;">
+    {% block content2 %}
+    <h1
+    style="margin-left: 15%;
+    text-align: center; color: #49a9b7; font-family: Myriad Arabic; font-weight: bolder;">
+    PROJECTS
+   </h1>
+
+   <hr style="width: 1100px; margin-left: 20%; color: #40a9b5;
+       background-color: #40a9b5;
+       height: 3px;
+       margin-top: -5px">
+
+
+    <div class="row">
+        <div class="col-md-1" style="margin-left: 20%">
+            <p style="color: #40a9b5; font-family: Myriad Arabic; font-weight: bolder; font-size: 35px">
+                Search
+            </p>
+        </div>
+
+        <div class="col-md-4 topnav">
+            <form class="example" style="margin-top: 1%; margin-left: -5%">
+                <input type="text" placeholder="" name="search">
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
+        </div>
+
+        <div class="col-md-3">
+            <a style="background-color: #ee4271; padding-left: 100px; padding-right: 100px; color: white; margin-left: 20%;
+            font-family: Myriad Arabic; font-weight: bolder; font-size: 25px; padding-bottom: 8px; padding-top: 8px;">
+                <img src="{% static 'img/add.png' %}" width="30px"/>
+                Add Client
+            </a>
+        </div>
+    </div>
+
+
+    <div class="table-report" style="padding-left: 280px; padding-right: 50px;">
+        <table class="table table-no-border" id="table-report" style="background-color: #effcff; border-radius: 20px">
+            <thead>
+                <tr>
+                    <th class="head-table" scope="col" 
+                        style="color: #49a9b7; font-family: Myriad Arabic; font-weight: inherit; font-size: 20px">
+                        CLIENT NAME</th>
+                    <th class="head-table" scope="col"
+                        style="color: #49a9b7; font-family: Myriad Arabic; font-weight: inherit; font-size: 20px">
+                        DATE OF INCLUSION</th>
+                    <th class="head-table" scope="col"
+                        style="color: #49a9b7; font-family: Myriad Arabic; font-weight: inherit; font-size: 20px">
+                        OPTIONS</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td class="project-table"
+                        style="color: #231f20; font-family: Myriad Arabic; font-weight: inherit; font-size: 25px">
+                        Lorem ipsum dolor sit amet</td>
+                    <td class="dates-table"
+                        style="color: #231f20; font-family: Myriad Arabic; font-weight: inherit; font-size: 25px">
+                        2018/05/22</td>
+                    </td>
+                    <td class="options-table">
+                        <img src="{% static 'img/new.png' %}" width="25px"/>
+                        <img src="{% static 'img/print.png' %}" width="25px"/>
+                        <img src="{% static 'img/delete.png' %}" width="25px"/>
+                    </td>
+                </tr>
+                <tr>
+                        <td class="project-table"
+                            style="color: #231f20; font-family: Myriad Arabic; font-weight: inherit; font-size: 25px">
+                            Lorem ipsum dolor sit amet</td>
+                        <td class="dates-table"
+                            style="color: #231f20; font-family: Myriad Arabic; font-weight: inherit; font-size: 25px">
+                            2018/05/22</td>
+                        </td>
+                        <td class="options-table">
+                            <img src="{% static 'img/new.png' %}" width="25px"/>
+                            <img src="{% static 'img/print.png' %}" width="25px"/>
+                            <img src="{% static 'img/delete.png' %}" width="25px"/>
+                        </td>
+                </tr>
+                <tr>
+                        <td class="project-table"
+                            style="color: #231f20; font-family: Myriad Arabic; font-weight: inherit; font-size: 25px">
+                            Lorem ipsum dolor sit amet</td>
+                        <td class="dates-table"
+                            style="color: #231f20; font-family: Myriad Arabic; font-weight: inherit; font-size: 25px">
+                            2018/05/22</td>
+                        </td>
+                        <td class="options-table">
+                            <img src="{% static 'img/new.png' %}" width="25px"/>
+                            <img src="{% static 'img/print.png' %}" width="25px"/>
+                            <img src="{% static 'img/delete.png' %}" width="25px"/>
+                        </td>
+                    </tr>
+                    <tr>
+                            <td class="project-table"
+                                style="color: #231f20; font-family: Myriad Arabic; font-weight: inherit; font-size: 25px">
+                                Lorem ipsum dolor sit amet</td>
+                            <td class="dates-table"
+                                style="color: #231f20; font-family: Myriad Arabic; font-weight: inherit; font-size: 25px">
+                                2018/05/22</td>
+                            </td>
+                            <td class="options-table">
+                                <img src="{% static 'img/new.png' %}" width="25px"/>
+                                <img src="{% static 'img/print.png' %}" width="25px"/>
+                                <img src="{% static 'img/delete.png' %}" width="25px"/>
+                            </td>
+                        </tr>
+                        <tr>
+                                <td class="project-table"
+                                    style="color: #231f20; font-family: Myriad Arabic; font-weight: inherit; font-size: 25px">
+                                    Lorem ipsum dolor sit amet</td>
+                                <td class="dates-table"
+                                    style="color: #231f20; font-family: Myriad Arabic; font-weight: inherit; font-size: 25px">
+                                    2018/05/22</td>
+                                </td>
+                                <td class="options-table">
+                                    <img src="{% static 'img/new.png' %}" width="25px"/>
+                                    <img src="{% static 'img/print.png' %}" width="25px"/>
+                                    <img src="{% static 'img/delete.png' %}" width="25px"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                    <td class="project-table"
+                                        style="color: #231f20; font-family: Myriad Arabic; font-weight: inherit; font-size: 25px">
+                                        Lorem ipsum dolor sit amet</td>
+                                    <td class="dates-table"
+                                        style="color: #231f20; font-family: Myriad Arabic; font-weight: inherit; font-size: 25px">
+                                        2018/05/22</td>
+                                    </td>
+                                    <td class="options-table">
+                                        <img src="{% static 'img/new.png' %}" width="25px"/>
+                                        <img src="{% static 'img/print.png' %}" width="25px"/>
+                                        <img src="{% static 'img/delete.png' %}" width="25px"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                        <td class="project-table"
+                                            style="color: #231f20; font-family: Myriad Arabic; font-weight: inherit; font-size: 25px">
+                                            Lorem ipsum dolor sit amet</td>
+                                        <td class="dates-table"
+                                            style="color: #231f20; font-family: Myriad Arabic; font-weight: inherit; font-size: 25px">
+                                            2018/05/22</td>
+                                        </td>
+                                        <td class="options-table">
+                                            <img src="{% static 'img/new.png' %}" width="25px"/>
+                                            <img src="{% static 'img/print.png' %}" width="25px"/>
+                                            <img src="{% static 'img/delete.png' %}" width="25px"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                            <td class="project-table"
+                                                style="color: #231f20; font-family: Myriad Arabic; font-weight: inherit; font-size: 25px">
+                                                Lorem ipsum dolor sit amet</td>
+                                            <td class="dates-table"
+                                                style="color: #231f20; font-family: Myriad Arabic; font-weight: inherit; font-size: 25px">
+                                                2018/05/22</td>
+                                            </td>
+                                            <td class="options-table">
+                                                <img src="{% static 'img/new.png' %}" width="25px"/>
+                                                <img src="{% static 'img/print.png' %}" width="25px"/>
+                                                <img src="{% static 'img/delete.png' %}" width="25px"/>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                                <td class="project-table"
+                                                    style="color: #231f20; font-family: Myriad Arabic; font-weight: inherit; font-size: 25px">
+                                                    Lorem ipsum dolor sit amet</td>
+                                                <td class="dates-table"
+                                                    style="color: #231f20; font-family: Myriad Arabic; font-weight: inherit; font-size: 25px">
+                                                    2018/05/22</td>
+                                                </td>
+                                                <td class="options-table">
+                                                    <img src="{% static 'img/new.png' %}" width="25px"/>
+                                                    <img src="{% static 'img/print.png' %}" width="25px"/>
+                                                    <img src="{% static 'img/delete.png' %}" width="25px"/>
+                                                </td>
+                                            </tr>
+                                            
+            </tbody>
+        </table>
+    </div>
+	
+	
+	<script src="{% static 'js/jquery-1.11.1.min.js' %}"></script>
+	<script src="{% static 'js/bootstrap.min.js' %}"></script>
+	<script src="{% static 'js/chart.min.js' %}"></script>
+	<script src="{% static 'js/chart-data.js' %}"></script>
+	<script src="{% static 'js/easypiechart.js' %}"></script>
+	<script src="{% static 'js/easypiechart-data.js' %}"></script>
+	<script src="{% static 'js/bootstrap-datepicker.js' %}"></script>
+	<script src="{% static 'js/custom.js' %}"></script>
+	<script>
+		window.onload = function () {
+	var chart1 = document.getElementById("line-chart").getContext("2d");
+	window.myLine = new Chart(chart1).Line(lineChartData, {
+	responsive: true,
+	scaleLineColor: "rgba(0,0,0,.2)",
+	scaleGridLineColor: "rgba(0,0,0,.05)",
+	scaleFontColor: "#c5c7cc"
+	});
+};
+	</script>
+{% endblock content2 %}
+		
+</body>
+</html>

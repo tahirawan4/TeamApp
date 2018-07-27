@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en" style="overflow-x: hidden !important;">
+<head>
+<!-- head Content -->
+{% block content %}
+
+{% endblock content %}
+<!-- /.container -->
+</head>
+<body>
+
+<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#sidebar-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">
+					<img class="img-responsive" id="image_full" src="{% static 'img/logo.png' %}" />
+					<img class="img-responsive" id="image_mobile" src="{% static 'img/logo-responsive.png' %}" />
+				</a>
+				<ul class="nav navbar-top-links navbar-right">
+					<li class="dropdown">
+						<a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
+							<em class="fa fa-bell"></em>
+							<span class="label label-info">4</span>
+						</a>
+						<ul class="dropdown-menu dropdown-alerts">
+							<li>
+								<div class="dropdown-messages-box">
+									<a href="profile.html" class="pull-left">
+										<img alt="image" class="img-circle" src="http://placehold.it/40/30a5ff/fff">
+									</a>
+									<div class="message-body">
+										<small class="pull-right">3 mins ago</small>
+										<a href="#">
+											<strong>John Doe</strong> commented on
+											<strong>your photo</strong>.</a>
+										<br />
+										<small class="text-muted">1:24 pm - 25/03/2015</small>
+									</div>
+								</div>
+							</li>
+							<li class="divider"></li>
+							<li>
+								<div class="dropdown-messages-box">
+									<a href="profile.html" class="pull-left">
+										<img alt="image" class="img-circle" src="http://placehold.it/40/30a5ff/fff">
+									</a>
+									<div class="message-body">
+										<small class="pull-right">1 hour ago</small>
+										<a href="#">New message from
+											<strong>Jane Doe</strong>.</a>
+										<br />
+										<small class="text-muted">12:27 pm - 25/03/2015</small>
+									</div>
+								</div>
+							</li>
+							<li class="divider"></li>
+							<li>
+								<div class="all-button">
+									<a href="#">
+										<em class="fa fa-inbox"></em>
+										<strong>All Messages</strong>
+									</a>
+								</div>
+							</li>
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
+							<em class="fa fa-envelope"></em>
+							<span class="label label-info">2</span>
+						</a>
+						<ul class="dropdown-menu dropdown-alerts">
+							<li>
+								<a href="#">
+									<div>
+										<em class="fa fa-envelope"></em> 1 New Message
+										<span class="pull-right text-muted small">3 mins ago</span>
+									</div>
+								</a>
+							</li>
+							<li class="divider"></li>
+							<li>
+								<a href="#">
+									<div>
+										<em class="fa fa-heart"></em> 12 New Likes
+										<span class="pull-right text-muted small">4 mins ago</span>
+									</div>
+								</a>
+							</li>
+							<li class="divider"></li>
+							<li>
+								<a href="#">
+									<div>
+										<em class="fa fa-user"></em> 5 New Followers
+										<span class="pull-right text-muted small">4 mins ago</span>
+									</div>
+								</a>
+							</li>
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
+							<em class="fa fa-bars"></em>
+							<span class="label label-info"></span>
+							<ul class="dropdown-menu dropdown-profile">
+								<li>
+									<a>
+										<div style="margin-top: -20% !important;">
+											<div class="profile-userpic">
+												<img src="{% static 'img/profile.png' %}" class="img-responsive">
+											</div>
+											<div class="profile-usertitle">
+												<div class="profile-usertitle-name" style="color: black !important">Lorem Ipsum</div>
+												<div class="profile-usertitle-status" style="color: black !important">
+													</span>Lorem Ipsum</div>
+											</div>
+										</div>
+										<div class="text-profile-popup">
+											<p  class="text-popup-profile">My Company</p>
+											<p class="text-popup-profile">Personal</p>
+											<button class="btn btn-primary" style="width: 100% !important;">Upgrade</button>
+											<p class="text-popup-profile-small">loremipsum@gmail.com <span class="tab">Settings</span></p>
+											<p class="text-popup-profile">More ></p>
+											<p class="text-popup-profile">My Profile Settings</p>
+											<p class="text-popup-profile">Log Out</p>
+										</div>
+									</a>
+								</li>
+							</ul>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!-- /.container-fluid -->
+	</nav>
+
+	<div>
+		<div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
+			<div class="profile-sidebar">
+				<div class="profile-userpic">
+					<img src="{% static 'img/profile.png' %}" class="img-responsive">
+				</div>
+				<div class="profile-usertitle">
+					<div class="profile-usertitle-name">Lorem Ipsum</div>
+					<div class="profile-usertitle-status">
+						</span>Lorem Ipsum</div>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<ul class="nav menu">
+				<li class="active">
+					<a href="{% url 'index' %}">
+						<img src="{% static 'img/dash.png' %}" class="img-icon-menu-active">&nbsp;</img> Dashboard</a>
+				</li>
+				<li>
+					<a href="{% url 'time' %}" id="menu-item">
+						<img src="{% static 'img/time.png' %}" class="img-icon-menu">&nbsp;</img> Time</a>
+				</li>
+				<li>
+					<a href="{% url 'report' %}" id="menu-item">
+						<img src="{% static 'img/reports.png' %}" class="img-icon-menu">&nbsp;</img> Reports</a>
+				</li>
+{#				<li>#}
+{#					<a href="#" id="menu-item">#}
+{#						<img src="{% static 'img/saved-reports.png' %}" class="img-icon-menu">&nbsp;</img> Saved Reports</a>#}
+{#				</li>#}
+				<hr style="margin-left: 20px; margin-right: 20px; border-top: 2px solid #daa965; background: transparent;">
+				<li>
+					<a href="{% url 'project' %}" id="menu-item">
+						<img src="{% static 'img/projects.png' %}" class="img-icon-menu">&nbsp;</img> Projects</a>
+				</li>
+				<li>
+					<a href="{% url 'client' %}" id="menu-item">
+						<img src="{% static 'img/clients.png' %}" class="img-icon-menu">&nbsp;</img> Clients</a>
+				</li>
+				<li>
+					<a href="{% url 'team' %}" id="menu-item">
+						<img src="{% static 'img/team.png' %}" class="img-icon-menu">&nbsp;</img> Team</a>
+				</li>
+				<li>
+					<a href="{% url 'room' %}" id="menu-item">
+						<img src="{% static 'img/chat.png' %}" class="img-icon-menu">&nbsp;</img> Chat</a>
+				</li>
+				<li>
+					<a href="{% url 'workspace' %}" id="menu-item">
+						<img src="{% static 'img/workspaces.png' %}" class="img-icon-menu">&nbsp;</img> Workspaces</a>
+				</li>
+{#				<li>#}
+{#					<a href="#" id="menu-item">#}
+{#						<img src="{% static 'img/tags.png' %}" class="img-icon-menu">&nbsp;</img> Tags</a>#}
+{#				</li>#}
+				<li>
+					<a href="{% url 'help' %}" id="menu-item">
+						<img src="{% static 'img/help.png' %}" class="img-icon-menu">&nbsp;</img> Help</a>
+				</li>
+			</ul>
+		</div>
+    </div>
+		<!--/.sidebar-->
+    <!-- innerbody Content -->
+    {% block content2 %}
+
+    {% endblock content2 %}
+    <!-- /.container -->
+
+{#{% block extra_body %}{% endblock extra_body %}#}
+</body>
+</html>

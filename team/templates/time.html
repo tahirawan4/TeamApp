@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+<html>
+<head>
+    {% block content %}
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Team Connect - Dashboard</title>
+	<link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+	<link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet">
+	<link href="{% static 'css/datepicker3.css' %}" rel="stylesheet">
+	<link href="{% static 'css/styles.css' %}" rel="stylesheet">
+	
+	<!--Custom Font-->
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+	<!--[if lt IE 9]>
+	<script src="{% static 'js/html5shiv.js' %}"></script>
+	<script src="{% static 'js/respond.min.js' %}"></script>
+	<![endif]-->
+    {% endblock content %}
+</head>
+<body>
+	{% block content2 %}
+
+
+
+    <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
+		<br/><br/>
+				
+		
+		<div class="row">
+			<div class="col-lg-11" style="margin-left: 4%;">
+				<div class="panel panel-default">
+                    <div class="panel-heading" 
+                    style="font-family: Myriad Arabic; font-weight: bolder; color: #49a9b7; font-size: 38px">
+                        <p style="color: #49a9b7" align="center">URGENT PROJECT</p></div>
+					<div class="panel-body">
+                        <div class="row" style="margin-left: 20%">
+                            <div class="col-xs-6 col-md-3">
+                                <div>
+                                    <div class="panel-body easypiechart-panel">
+                                        <div class="easypiechart" id="easypiechart-blue" data-percent="2">
+                                            <span class="percent" 
+                                            style="font-family: Myriad Arabic; font-weight: bolder; font-size: 80px">02</span>
+                                        </div>
+                                        <p style="font-family: Myriad Arabic; font-weight: bolder; font-size: 20px; font-style: italic">DAYS</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-md-3">
+                                <div>
+                                    <div class="panel-body easypiechart-panel">
+                                        <div class="easypiechart" id="easypiechart-teal" data-percent="6" ><span class="percent"
+                                            style="font-family: Myriad Arabic; font-weight: bolder; font-size: 80px">6</span>
+                                        </div>
+                                        <p style="font-family: Myriad Arabic; font-weight: bolder; font-size: 20px; font-style: italic">HOURS</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-md-3">
+                                <div>
+                                    <div class="panel-body easypiechart-panel">
+                                        <div class="easypiechart" id="easypiechart-orange" data-percent="35" ><span class="percent"
+                                            style="font-family: Myriad Arabic; font-weight: bolder; font-size: 80px">35</span>
+                                        </div>
+                                        <p style="font-family: Myriad Arabic; font-weight: bolder; font-size: 20px; font-style: italic">MINUTES</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div><!--/.row-->
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h6 
+                                style="font-family: Myriad Arabic; font-weight: normal; font-size: 25px; 
+                                color: #49a9b7; margin-left: 2%;">
+                                Project Name
+                            </h6>
+                            <h6 
+                                style="font-family: Myriad Arabic; font-weight: normal; font-size: 30px; color: black; 
+                                margin-left: 2%">
+                                Lorem ipsum dolor sit amet
+                            </h6>
+
+                            <h4 
+                                style="font-family: Myriad Arabic; font-weight: normal; font-size: 25px; color: #49a9b7; margin-left: 2%">
+                                Start Date / End Date
+                            </h4>
+                            <h4 
+                                style="font-family: Myriad Arabic; font-weight: normal; font-size: 30px; color: black; 
+                                margin-left: 2%">
+                                2018/05/18 - 2018/05/30
+                            </h4>
+                        </div>
+                        <div class="col-md-6" style="margin-left: -1%">
+                            <h4 
+                                style="font-family: Myriad Arabic; font-weight: normal; font-size: 25px; color: #49a9b7; margin-left: 2%">
+                                Conclusion
+                            </h4>
+                            <div class="progress">
+                                <div data-percentage="0%" style="width: 80%; text-align: center;" class="progress-bar progress-bar-blue"
+                                role="progressbar" aria-valuemin="0" aria-valuemax="100">80%</div>
+                            </div>
+                            <div class="col-md-4">
+                                <p style="font-family: Myriad Arabic; font-weight: normal; font-size: 25px; 
+                                color: #ee4271; margin-left: 2%">
+                                <span class="fa fa-commenting"></span>
+                                chat
+                                
+                            </p>
+                            </div>
+                            <div class="col-md-6">
+                                <p style="font-family: Myriad Arabic; font-weight: normal; font-size: 25px; 
+                                    color: #ee4271; margin-left: 2%">
+                                    Access Project
+                                    <span class="fa fa-ellipsis-h"></span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- /.panel-->
+
+                <p style="font-family: Myriad Arabic; font-weight: lighter; font-size: 35px; 
+                    color: #daa965; margin-left: 2%">
+                    Latest Projects
+                </p>
+
+                <div class="row" style="background-color: white">      
+                    <div class="col-lg-11" style="margin-left: -0.1%;">
+                        <div class="row">
+                            <div class="col-md-6">
+
+                                <h6 
+                                    style="font-family: Myriad Arabic; font-weight: normal; font-size: 25px; 
+                                    color: #49a9b7; margin-left: 2%;">
+                                    Project Name
+                                </h6>
+                                <h6 
+                                    style="font-family: Myriad Arabic; font-weight: normal; font-size: 30px; color: black; 
+                                    margin-left: 2%">
+                                    Lorem ipsum dolor sit amet
+                                </h6>
+            
+                                <h4 
+                                    style="font-family: Myriad Arabic; font-weight: normal; font-size: 25px; color: #49a9b7; margin-left: 2%">
+                                    Start Date / End Date
+                                </h4>
+                                <h4 
+                                    style="font-family: Myriad Arabic; font-weight: normal; font-size: 30px; color: black; 
+                                    margin-left: 2%">
+                                    2018/05/18 - 2018/05/30
+                                </h4>
+                                <h4 
+                                style="font-family: Myriad Arabic; font-weight: normal; font-size: 25px; color: #49a9b7; margin-left: 2%">
+                                Conclusion
+                            </h4>
+                            <div class="progress">
+                                <div data-percentage="0%" style="width: 80%; text-align: center;" class="progress-bar progress-bar-blue"
+                                role="progressbar" aria-valuemin="0" aria-valuemax="100">80%</div>
+                            </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="col-xs-6 col-md-3">
+                                    <div>
+                                        <div class="panel-body easypiechart-panel">
+                                            <div class="easypiechart" id="easypiechart-blue" data-percent="2">
+                                                <span class="percent" 
+                                                style="font-family: Myriad Arabic; font-weight: bolder; font-size: 80px">02</span>
+                                            </div>
+                                            <p style="font-family: Myriad Arabic; font-weight: bolder; font-size: 20px; font-style: italic">DAYS</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-6 col-md-3">
+                                    <div>
+                                        <div class="panel-body easypiechart-panel">
+                                            <div class="easypiechart" id="easypiechart-teal" data-percent="6" >
+                                                <span class="percent"
+                                                style="font-family: Myriad Arabic; font-weight: bolder; font-size: 80px">4</span>
+                                            </div>
+                                            <p style="font-family: Myriad Arabic; font-weight: bolder; font-size: 20px; font-style: italic">HOURS</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-xs-6 col-md-3">
+                                    <div>
+                                        <div class="panel-body easypiechart-panel">
+                                            <div class="easypiechart" id="easypiechart-orange" data-percent="33" >
+                                                <span class="percent"
+                                                style="font-family: Myriad Arabic; font-weight: bolder; font-size: 80px">33</span>
+                                            </div>
+                                            <p style="font-family: Myriad Arabic; font-weight: bolder; font-size: 20px; font-style: italic">MINUTES</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4" style="margin-left: 5%">
+                                        <p style="font-family: Myriad Arabic; font-weight: normal; font-size: 25px; 
+                                        color: #ee4271; margin-left: 2%">
+                                        <span class="fa fa-commenting"></span>
+                                        chat
+                                        
+                                    </p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p style="font-family: Myriad Arabic; font-weight: normal; font-size: 25px; 
+                                            color: #ee4271; margin-left: 2%">
+                                            Access Project
+                                            <span class="fa fa-ellipsis-h"></span>
+                                        </p>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+</div>
+                    <br/>
+
+
+                    <div class="row" style="background-color: white">      
+                            <div class="col-lg-11" style="margin-left: -0.1%;">
+                                <div class="row">
+                                    <div class="col-md-6">
+        
+                                        <h6 
+                                            style="font-family: Myriad Arabic; font-weight: normal; font-size: 25px; 
+                                            color: #49a9b7; margin-left: 2%;">
+                                            Project Name
+                                        </h6>
+                                        <h6 
+                                            style="font-family: Myriad Arabic; font-weight: normal; font-size: 30px; color: black; 
+                                            margin-left: 2%">
+                                            Lorem ipsum dolor sit amet
+                                        </h6>
+                    
+                                        <h4 
+                                            style="font-family: Myriad Arabic; font-weight: normal; font-size: 25px; color: #49a9b7; margin-left: 2%">
+                                            Start Date / End Date
+                                        </h4>
+                                        <h4 
+                                            style="font-family: Myriad Arabic; font-weight: normal; font-size: 30px; color: black; 
+                                            margin-left: 2%">
+                                            2018/05/18 - 2018/05/30
+                                        </h4>
+                                        <h4 
+                                        style="font-family: Myriad Arabic; font-weight: normal; font-size: 25px; color: #49a9b7; margin-left: 2%">
+                                        Conclusion
+                                    </h4>
+                                    <div class="progress">
+                                        <div data-percentage="0%" style="width: 80%; text-align: center;" class="progress-bar progress-bar-blue"
+                                        role="progressbar" aria-valuemin="0" aria-valuemax="100">80%</div>
+                                    </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="col-xs-6 col-md-3">
+                                            <div>
+                                                <div class="panel-body easypiechart-panel">
+                                                    <div class="easypiechart" id="easypiechart-blue" data-percent="2">
+                                                        <span class="percent" 
+                                                        style="font-family: Myriad Arabic; font-weight: bolder; font-size: 80px">02</span>
+                                                    </div>
+                                                    <p style="font-family: Myriad Arabic; font-weight: bolder; font-size: 20px; font-style: italic">DAYS</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-md-3">
+                                            <div>
+                                                <div class="panel-body easypiechart-panel">
+                                                    <div class="easypiechart" id="easypiechart-teal" data-percent="6" >
+                                                        <span class="percent"
+                                                        style="font-family: Myriad Arabic; font-weight: bolder; font-size: 80px">4</span>
+                                                    </div>
+                                                    <p style="font-family: Myriad Arabic; font-weight: bolder; font-size: 20px; font-style: italic">HOURS</p>
+                                                </div>
+                                            </div>
+                                        </div>
+        
+                                        <div class="col-xs-6 col-md-3">
+                                            <div>
+                                                <div class="panel-body easypiechart-panel">
+                                                    <div class="easypiechart" id="easypiechart-orange" data-percent="33" >
+                                                        <span class="percent"
+                                                        style="font-family: Myriad Arabic; font-weight: bolder; font-size: 80px">33</span>
+                                                    </div>
+                                                    <p style="font-family: Myriad Arabic; font-weight: bolder; font-size: 20px; font-style: italic">MINUTES</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4" style="margin-left: 5%">
+                                                <p style="font-family: Myriad Arabic; font-weight: normal; font-size: 25px; 
+                                                color: #ee4271; margin-left: 2%">
+                                                <span class="fa fa-commenting"></span>
+                                                chat
+                                                
+                                            </p>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p style="font-family: Myriad Arabic; font-weight: normal; font-size: 25px; 
+                                                    color: #ee4271; margin-left: 2%">
+                                                    Access Project
+                                                    <span class="fa fa-ellipsis-h"></span>
+                                                </p>
+                                            </div>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                            <br/>
+
+
+                
+                
+
+                
+	
+	
+	<script src="{% static 'js/jquery-1.11.1.min.js' %}"></script>
+	<script src="{% static 'js/bootstrap.min.js' %}"></script>
+	<script src="{% static 'js/chart.min.js' %}"></script>
+	<script src="{% static 'js/chart-data.js' %}"></script>
+	<script src="{% static 'js/easypiechart.js' %}"></script>
+	<script src="{% static 'js/easypiechart-data.js' %}"></script>
+	<script src="{% static 'js/bootstrap-datepicker.js' %}"></script>
+	<script src="{% static 'js/custom.js' %}"></script>
+	<script>
+		window.onload = function () {
+	var chart1 = document.getElementById("line-chart").getContext("2d");
+	window.myLine = new Chart(chart1).Line(lineChartData, {
+	responsive: true,
+	scaleLineColor: "rgba(0,0,0,.2)",
+	scaleGridLineColor: "rgba(0,0,0,.05)",
+	scaleFontColor: "#c5c7cc"
+	});
+};
+    </script>
+    
+    
+		{% endblock content2 %}
+</body>
+</html>

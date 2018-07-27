@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+<html>
+<head>
+    {% block content %}
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="{% static 'js/jquery-1.11.1.min.js' %}"></script>
+	<script>
+		$(function () {
+			$("#includedContent").load("component_calendar.html");
+		});
+	</script>
+	<title>Team Connect - Dashboard</title>
+	<link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+	<link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet">
+	<link href="{% static 'css/datepicker3.css' %}" rel="stylesheet">
+	<link href="{% static 'css/index.css' %}" rel="stylesheet">
+
+	<!--Custom Font-->
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+	<!--[if lt IE 9]>
+	<script src="{% static 'js/html5shiv.js' %}"></script>
+	<script src="{% static 'js/respond.min.js' %}"></script>
+	<![endif]-->
+    {% endblock content %}
+
+</head>
+
+<body>
+
+        {% block content2 %}
+
+		<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
+			<div class="row">
+				<div class="col-md-3 panel-status">
+					<div class="panel-completed">
+						<div class="">
+							<h1 id="text-panel">12</h1>
+							<img src="{% static 'img/icon_completed.png' %}" class="img-icon-box" />
+						</div>
+					</div>
+					<h1 id="text-bottom-completed">Completed</h1>
+				</div>
+				<div class="col-md-3 panel-status-others">
+					<div class="panel-overdue">
+						<div class="">
+							<h1 id="text-panel">1</h1>
+							<img src="{% static 'img/icon_overdue.png' %}" class="img-icon-box" />
+						</div>
+					</div>
+					<h1 id="text-bottom-overdue">Overdue</h1>
+				</div>
+				<div class="col-md-3 panel-status-others2">
+					<div class="panel-due">
+						<div class="">
+							<h1 id="text-panel">5</h1>
+							<img src="{% static 'img/icon_due.png' %}" class="img-icon-box" />
+						</div>
+					</div>
+					<h1 id="text-bottom-due">Due</h1>
+				</div>
+				<div class="col-md-3 panel-status-others2">
+					<div class="panel-in-progress">
+						<div class="">
+							<h1 id="text-panel">3</h1>
+							<img src="{% static 'img/icon_in_progress.png' %}" class="img-icon-box" />
+						</div>
+					</div>
+					<h1 id="text-bottom-in-progress">In Progress</h1>
+				</div>
+			</div>
+
+			<div class="table-home" style="overflow-x:auto;">
+				<table class="table" id="table-home">
+					<tbody>
+						<tr>
+							<td class="text-table">Lorem ipsum dolor sit amet</td>
+							<td class="progress-table">
+								<div class="div-progress">
+									<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"
+									 style="width:100%">
+										100%
+									</div>
+								</div>
+							</td>
+							<td class="hour-table">07:00</td>
+							<td class="date-table">2018/04/25</td>
+							<td>
+								<img class="etc-table" src="{% static 'img/etc.png' %}" />
+							</td>
+						</tr>
+						<tr>
+							<td class="text-table">Lorem ipsum dolor sit amet</td>
+							<td class="progress-table">
+								<div class="div-progress">
+									<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"
+									 style="width:100%">
+										100%
+									</div>
+								</div>
+							</td>
+							<td class="hour-table">07:00</td>
+							<td class="date-table">2018/04/25</td>
+							<td>
+								<img class="etc-table" src="{% static 'img/etc.png' %}" />
+							</td>
+						</tr>
+						<tr>
+							<td class="text-table">Lorem ipsum dolor sit amet</td>
+							<td class="progress-table">
+								<div class="div-progress">
+									<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"
+									 style="width:100%">
+										100%
+									</div>
+								</div>
+							</td>
+							<td class="hour-table">07:00</td>
+							<td class="date-table">2018/04/25</td>
+							<td>
+								<img class="etc-table" src="{% static 'img/etc.png' %}" />
+							</td>
+						</tr>
+						<tr>
+							<td class="text-table">Lorem ipsum dolor sit amet</td>
+							<td class="progress-table">
+								<div class="div-progress">
+									<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"
+									 style="width:100%">
+										100%
+									</div>
+								</div>
+							</td>
+							<td class="hour-table">07:00</td>
+							<td class="date-table">2018/04/25</td>
+							<td>
+								<img class="etc-table" src="{% static 'img/etc.png' %}" />
+							</td>
+						</tr>
+					</tbody>
+					<tfoot>
+						<tr>
+							<td></td>
+							<td class="text-footer-table">View more...</td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+					</tfoot>
+				</table>
+			</div>
+
+			<div class="panel-calendar">
+				<div class="col-md-4">
+					<div class="panel panel-default">
+						<div class="panel-body">
+							<div style="width: 0%;" id="calendar"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="panel panel-default">
+						<div class="panel-body">
+							<div style="width: 0%;" id="includedContent"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 panel-responsive-create">
+					<div class="panel-create-project">
+						<div class="panel-create">
+							<h1 id="text-create-project">Create Project</h1>
+							<div class="dropup keep-open" style="margin-left: 0%;">
+								<a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
+									<img src="{% static 'img/icon_add.png' %}" class="img-icon-add" />
+								</a>
+								<ul id="popup" class="dropdown-menu dropdown-menu-right dropdown-messages">
+									<div style="padding-bottom: 10px; margin-top: -2%;">
+										<h2 class="header-dropup">WHAT ARE YOU DOING?</h2>
+										<h2 class="text-bottom-header">GET A CAT</h2>
+										<h4 class="text-subtitle-bottom-header">Add card description</h4>
+									</div>
+									<div style="padding-left: 3%;">
+										<label class="custom-container">Checklist
+											<input type="checkbox" checked="checked">
+											<span class="checkmark"></span>
+										</label>
+										<div class="progress" style="height: 100%; margin-right: 5%;">
+											<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"
+											 style="width:40%">
+												40%
+											</div>
+										</div>
+										<label style="font-weight: normal" class="custom-container">Decide cat breed
+											<input type="checkbox">
+											<span class="checkmark"></span>
+										</label>
+										<label style="font-weight: normal" class="custom-container">Visit animal shelter
+											<input type="checkbox">
+											<span class="checkmark"></span>
+										</label>
+										<label style="font-weight: normal" class="custom-container">Go to pet shop
+											<input type="checkbox">
+											<span class="checkmark"></span>
+										</label>
+										<label style="font-weight: normal" class="custom-container">Buy tuna
+											<input type="checkbox">
+											<span class="checkmark"></span>
+										</label>
+									</div>
+									<div>
+										<div class="form-group" style="padding-right: 5%; padding-left: 3%;">
+											<textarea class="form-control" rows="3"></textarea>
+										</div>
+										<div class="btn-textarea">
+											<button type="button" class="btn btn-primary">+ Add checklist item</button>
+										</div>
+									</div>
+									<div style="padding-left: 3%;">
+										<label class="custom-container">Activity
+											<input type="checkbox" checked="checked">
+											<span class="checkmark"></span>
+										</label>
+										<div class="form-group" style="padding-right: 5%;">
+											<textarea class="form-control" placeholder="Add Comment" rows="2"></textarea>
+										</div>
+									</div>
+									<div>
+										<div class="col-md-5">
+											<label class="label-bottom">Members</label>
+											<div style="padding-left: 13%; margin-top: -3%">
+												<input type="text" class="form-control" placeholder="No members assigned">
+												<button type="button" class="btn btn-default">+ Assign</button>
+											</div>
+
+											<label style="padding-top: 10%;" class="label-bottom">Attachments</label>
+											<div style="padding-left: 13%; margin-top: -3%;">
+												<input type="text" class="form-control" placeholder="No attachments">
+												<button type="button" class="btn btn-default">+ Upload</button>
+											</div>
+										</div>
+										<div class="col-md-1">
+											<img style="height: 230px;;" src="{% static 'img/divider_vertical.png' %}" />
+										</div>
+										<div class="col-md-5">
+											<label style="padding-top: 0%;" class="label-bottom">Actions</label>
+											<div style="padding-left: 13%;">
+												<button type="button" class="btn btn-default">+ Assign</button>
+											</div>
+											<div style="padding-left: 13%; padding-top: 5%;">
+												<button type="button" class="btn btn-default">+ Assign</button>
+											</div>
+											<div style="padding-left: 13%; padding-top: 5%;">
+												<button type="button" class="btn btn-default">+ Assign</button>
+											</div>
+											<div style="padding-left: 13%; padding-top: 5%;">
+												<button type="button" class="btn btn-default">+ Assign</button>
+											</div>
+										</div>
+									</div>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- /.row -->
+
+		<script src="{% static 'js/bootstrap.min.js' %}"></script>
+		<script src="{% static 'js/chart.min.js' %}"></script>
+		<script src="{% static 'js/chart-data.js' %}"></script>
+		<script src="{% static 'js/easypiechart.js' %}"></script>
+		<script src="{% static 'js/easypiechart-data.js' %}"></script>
+		<script src="{% static 'js/bootstrap-datepicker.js' %}"></script>
+		<script src="{% static 'js/custom.js' %}"></script>
+		<script>
+
+
+			$('.dropup.keep-open').on({
+				"shown.bs.dropdown": function () { this.closable = false; },
+				"click": function () { this.closable = false; },
+				"hide.bs.dropdown": function () { return this.closable; }
+			});
+		</script>
+        {% endblock content2 %}
+
+</body>
+
+</html>

@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+<html>
+
+<head>
+    {% block content %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="{% static 'js/jquery-1.11.1.min.js' %}"></script>
+    <script> 
+        $(function () {
+            $("#includedContent").load("calendar.html");
+        });
+    </script>
+    <title>Team Connect - Projects</title>
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/datepicker3.css' %}" rel="stylesheet">
+    <link href="{% static 'css/index.css' %}" rel="stylesheet">
+    <link href="{% static 'css/timeline.css' %}" rel="stylesheet">
+    <link href="{% static 'css/main.css' %}" rel="stylesheet">
+
+    <!--Custom Font-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <!--[if lt IE 9]>
+	<script src="{% static 'js/html5shiv.js' %}"></script>
+	<script src="{% static 'js/respond.min.js' %}"></script>
+	<![endif]-->
+    {% endblock content %}
+</head>
+
+<body>
+{% block content2 %}
+
+        <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2">
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <span class="text-top-projects">PROJECTS</span>
+                        <hr style="border-top: 3px solid #49a9b7; background: transparent; margin-top: -0.3%;
+                                    margin-left: 10%; margin-right: 10%;">
+                        <div class="col-md-7">
+                            <div class="col-md-4">
+                                <label class="text-top-filter">Filter</label>
+                            </div>
+                            <div class="col-md-7">
+                                <div class="form-group">
+                                    <select class="form-control" id="sel1">
+                                        <option>All</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <button style="width: 80%" class="btn btn-primary">+ Create Project</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+            </div>
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="col-md-5" style="margin-left: 8.5%;">
+                    <div class="panel-body" id="panel-projects">
+                        <p class="text-panel-projects">Project Name</p>
+                        <p class="text2-panel-projects">Lorem ipsum dolor sit amet</p>
+                        <p class="text-panel-projects">Start Date / End Date</p>
+                        <p class="text2-panel-projects">2018/05/18 - 2018/05/30</p>
+                        <p class="text-panel-projects">Conclusion</p>
+                        <div>
+                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"
+                                style="width:80%; margin-top: -2%;">
+                                100%
+                            </div>
+                        </div>
+                        <div>
+                            <br>
+                            <span class="text-status-projects">Status</span>
+                            <img src="{% static 'img/bar_status.png' %}" style="width: 30%; margin-left: 2%;" />
+                            <img src="{% static 'img/chat_icon.png' %}" style="width: 15%; margin-left: 3%;" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="panel-body" id="panel-projects">
+                        <p class="text-panel-projects">Project Name</p>
+                        <p class="text2-panel-projects">Lorem ipsum dolor sit amet</p>
+                        <p class="text-panel-projects">Start Date / End Date</p>
+                        <p class="text2-panel-projects">2018/05/18 - 2018/05/30</p>
+                        <p class="text-panel-projects">Conclusion</p>
+                        <div>
+                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"
+                                style="width:80%; margin-top: -2%;">
+                                100%
+                            </div>
+                        </div>
+                        <div>
+                            <br>
+                            <span class="text-status-projects">Status</span>
+                            <img src="{% static 'img/bar_status.png' %}" style="width: 30%; margin-left: 2%;" />
+                            <img src="{% static 'img/chat_icon.png' %}" style="width: 15%; margin-left: 3%;" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5" style="margin-left: 8.5%; margin-top: 2%;">
+                    <div class="panel-body" id="panel-projects">
+                        <p class="text-panel-projects">Project Name</p>
+                        <p class="text2-panel-projects">Lorem ipsum dolor sit amet</p>
+                        <p class="text-panel-projects">Start Date / End Date</p>
+                        <p class="text2-panel-projects">2018/05/18 - 2018/05/30</p>
+                        <p class="text-panel-projects">Conclusion</p>
+                        <div>
+                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"
+                                style="width:80%; margin-top: -2%;">
+                                100%
+                            </div>
+                        </div>
+                        <div>
+                            <br>
+                            <span class="text-status-projects">Status</span>
+                            <img src="{% static 'img/bar_status.png' %}" style="width: 30%; margin-left: 2%;" />
+                            <img src="{% static 'img/chat_icon.png' %}" style="width: 15%; margin-left: 3%;" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5" style="margin-top: 2%;">
+                    <div class="panel-body" id="panel-projects">
+                        <p class="text-panel-projects">Project Name</p>
+                        <p class="text2-panel-projects">Lorem ipsum dolor sit amet</p>
+                        <p class="text-panel-projects">Start Date / End Date</p>
+                        <p class="text2-panel-projects">2018/05/18 - 2018/05/30</p>
+                        <p class="text-panel-projects">Conclusion</p>
+                        <div>
+                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"
+                                style="width:80%; margin-top: -2%;">
+                                100%
+                            </div>
+                        </div>
+                        <div>
+                            <br>
+                            <span class="text-status-projects">Status</span>
+                            <img src="{% static 'img/bar_status.png' %}" style="width: 30%; margin-left: 2%;" />
+                            <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
+                                <img src="{% static 'img/chat_icon.png' %}" style="width: 15%; margin-left: 3%;" />
+                            </a>
+                            <ul id="chat-projects" class="dropdown-menu dropdown-menu-right dropdown-chat">
+                                <div style="width: 50%; margin: 0 auto !important;">
+                                    <div class="profile-userpic">
+                                        <img src="{% static 'img/profile.png' %}" class="img-responsive">
+                                    </div>
+                                    <div class="profile-usertitle">
+                                        <div class="profile-usertitle-name" style="color: white !important; margin-top: 10%;">
+                                            Lorem Ipsum
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default chat" id="panel-chat">
+                                    <div class="panel-body" style="height: 330px;;">
+                                        <ul>
+                                            <li class="left clearfix">
+                                                <span class="chat-img pull-left">
+                                                    <img src="http://placehold.it/60/30a5ff/fff" alt="User Avatar" class="img-circle" />
+                                                </span>
+                                                <div class="chat-body clearfix">
+                                                    <div class="header">
+                                                        <strong class="primary-font">John Doe</strong>
+                                                        <small class="text-muted">32 mins ago</small>
+                                                    </div>
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ante turpis,
+                                                        rutrum ut ullamcorper sed, dapibus ac nunc.</p>
+                                                </div>
+                                            </li>
+                                            <li class="right clearfix">
+                                                <span class="chat-img pull-right">
+                                                    <img src="http://placehold.it/60/dde0e6/5f6468" alt="User Avatar" class="img-circle" />
+                                                </span>
+                                                <div class="chat-body clearfix">
+                                                    <div class="header">
+                                                        <strong class="pull-left primary-font">Jane Doe</strong>
+                                                        <small class="text-muted">6 mins ago</small>
+                                                    </div>
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ante turpis,
+                                                        rutrum ut ullamcorper sed, dapibus ac nunc.</p>
+                                                </div>
+                                            </li>
+                                            <li class="left clearfix">
+                                                <span class="chat-img pull-left">
+                                                    <img src="http://placehold.it/60/30a5ff/fff" alt="User Avatar" class="img-circle" />
+                                                </span>
+                                                <div class="chat-body clearfix">
+                                                    <div class="header">
+                                                        <strong class="primary-font">John Doe</strong>
+                                                        <small class="text-muted">32 mins ago</small>
+                                                    </div>
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ante turpis,
+                                                        rutrum ut ullamcorper sed, dapibus ac nunc.</p>
+                                                </div>
+                                            </li>
+                                            <li class="left clearfix">
+                                                <span class="chat-img pull-left">
+                                                    <img src="http://placehold.it/60/30a5ff/fff" alt="User Avatar" class="img-circle" />
+                                                </span>
+                                                <div class="chat-body clearfix">
+                                                    <div class="header">
+                                                        <strong class="primary-font">John Doe</strong>
+                                                        <small class="text-muted">32 mins ago</small>
+                                                    </div>
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ante turpis,
+                                                        rutrum ut ullamcorper sed, dapibus ac nunc.</p>
+                                                </div>
+                                            </li>
+                                            <li class="right clearfix">
+                                                <span class="chat-img pull-right">
+                                                    <img src="http://placehold.it/60/dde0e6/5f6468" alt="User Avatar" class="img-circle" />
+                                                </span>
+                                                <div class="chat-body clearfix">
+                                                    <div class="header">
+                                                        <strong class="pull-left primary-font">Jane Doe</strong>
+                                                        <small class="text-muted">6 mins ago</small>
+                                                    </div>
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ante turpis,
+                                                        rutrum ut ullamcorper sed, dapibus ac nunc.</p>
+                                                </div>
+                                            </li>
+                                            <li class="left clearfix">
+                                                <span class="chat-img pull-left">
+                                                    <img src="http://placehold.it/60/30a5ff/fff" alt="User Avatar" class="img-circle" />
+                                                </span>
+                                                <div class="chat-body clearfix">
+                                                    <div class="header">
+                                                        <strong class="primary-font">John Doe</strong>
+                                                        <small class="text-muted">32 mins ago</small>
+                                                    </div>
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ante turpis,
+                                                        rutrum ut ullamcorper sed, dapibus ac nunc.</p>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="panel-footer">
+                                        <div class="input-group">
+                                            <textarea class="form-control" id="message" name="message" style="margin-top: 3%;" 
+                                            placeholder="Please enter your message here..." rows="8"></textarea>
+                                            <span class="input-group-btn">
+                                                <button class="btn btn-primary-outline" id="btn-chat">
+                                                    <img src="{% static 'img/chat_btn01.png' %}" class="btn-chat-drop" />
+                                                </button>
+                                                <br>
+                                                <button class="btn btn-primary-outline" id="btn-chat">
+                                                    <img src="{% static 'img/chat_btn02.png' %}" class="btn-chat-drop" />
+                                                </button>
+                                                <br>
+                                                <button class="btn btn-primary-outline" id="btn-chat">
+                                                    <img src="{% static 'img/chat_btn03.png' %}" class="btn-chat-drop" />
+                                                </button>
+                                                <br>
+                                                <button class="btn btn-primary-outline" id="btn-chat">
+                                                    <img src="{% static 'img/chat_btn04.png' %}" class="btn-chat-drop" />
+                                                </button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5" style="margin-left: 8.5%; margin-top: 2%; margin-bottom: 5%;">
+                    <div class="panel-body" id="panel-projects">
+                        <p class="text-panel-projects">Project Name</p>
+                        <p class="text2-panel-projects">Lorem ipsum dolor sit amet</p>
+                        <p class="text-panel-projects">Start Date / End Date</p>
+                        <p class="text2-panel-projects">2018/05/18 - 2018/05/30</p>
+                        <p class="text-panel-projects">Conclusion</p>
+                        <div>
+                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"
+                                style="width:80%; margin-top: -2%;">
+                                100%
+                            </div>
+                        </div>
+                        <div>
+                            <br>
+                            <span class="text-status-projects">Status</span>
+                            <img src="{% static 'img/bar_status.png' %}" style="width: 30%; margin-left: 2%;" />
+                            <img src="{% static 'img/chat_icon.png' %}" style="width: 15%; margin-left: 3%;" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5" style="margin-top: 2%; margin-bottom: 5%;">
+                    <div class="panel-body" id="panel-projects">
+                        <p class="text-panel-projects">Project Name</p>
+                        <p class="text2-panel-projects">Lorem ipsum dolor sit amet</p>
+                        <p class="text-panel-projects">Start Date / End Date</p>
+                        <p class="text2-panel-projects">2018/05/18 - 2018/05/30</p>
+                        <p class="text-panel-projects">Conclusion</p>
+                        <div>
+                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"
+                                style="width:80%; margin-top: -2%;">
+                                100%
+                            </div>
+                        </div>
+                        <div>
+                            <br>
+                            <span class="text-status-projects">Status</span>
+                            <img src="{% static 'img/bar_status.png' %}" style="width: 30%; margin-left: 2%;" />
+                            <img src="{% static 'img/chat_icon.png' %}" style="width: 15%; margin-left: 3%;" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <script src="{% static 'js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'js/chart.min.js' %}"></script>
+        <script src="{% static 'js/chart-data.js' %}"></script>
+        <script src="{% static 'js/easypiechart.js' %}"></script>
+        <script src="{% static 'js/easypiechart-data.js' %}"></script>
+        <script src="{% static 'js/bootstrap-datepicker.js' %}"></script>
+        <script src="{% static 'js/custom.js' %}"></script>
+        <script src="{% static 'js/jchart.js' %}"></script>
+        <script>
+            // window.onload = function () {
+            // 	var chart1 = document.getElementById("line-chart").getContext("2d");
+            // 	window.myLine = new Chart(chart1).Line(lineChartData, {
+            // 		responsive: true,
+            // 		scaleLineColor: "rgba(0,0,0,.2)",
+            // 		scaleGridLineColor: "rgba(0,0,0,.05)",
+            // 		scaleFontColor: "#c5c7cc"
+            // 	});
+            // };
+
+            $('.dropup.keep-open').on({
+                "shown.bs.dropdown": function () { this.closable = false; },
+                "click": function () { this.closable = false; },
+                "hide.bs.dropdown": function () { return this.closable; }
+            });
+        </script>
+        <script>
+            $(document).ready(function () {
+                $("#current_month").jChart();
+            });
+        </script>
+{% endblock content2 %}
+</body>
+
+</html>

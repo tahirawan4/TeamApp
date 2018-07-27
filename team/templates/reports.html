@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+<html>
+
+<head>
+    {% block content %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="{% static 'js/jquery-1.11.1.min.js' %}"></script>
+    <script> 
+        $(function () {
+            $("#includedContent").load("calendar.html");
+        });
+    </script>
+    <title>Team Connect - Reports</title>
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/datepicker3.css' %}" rel="stylesheet">
+    <link href="{% static 'css/index.css' %}" rel="stylesheet">
+    <link href="{% static 'css/timeline.css' %}" rel="stylesheet">
+    <link href="{% static 'css/main.css' %}" rel="stylesheet">
+
+    <!--Custom Font-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <!--[if lt IE 9]>
+	<script src="{% static 'js/html5shiv.js' %}"></script>
+	<script src="{% static 'js/respond.min.js' %}"></script>
+	<![endif]-->
+    {% endblock content %}
+</head>
+
+<body style="overflow-x: hidden !important;">
+{% block content2 %}
+
+        <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 panel panel-default" id="panel-timeline" style="overflow-x: hidden !important;">
+            <div class="panel-body">
+                <div class="row" style="padding-left: 8%">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <span class="text-top">WORK COMPLETED IN RECENT MONTHS</span>
+                        <section class="main-timeline-section">
+                            <div class="conference-center-line"></div>
+                            <div class="timeline-article timeline-article-bottom">
+                                <div class="content-date">
+                                    <span style="margin-left: 25%">30</span>
+                                </div>
+                                <div class="meta-date"></div>
+                                <div class="content-box">
+                                    <p style="color: #ef4071; margin-top: 60%; margin-left: 35%">May</p>
+                                </div>
+                            </div>
+                            <div class="conference-timeline-content">
+                                <div class="timeline-article timeline-article-top">
+                                    <div class="content-date">
+                                        <span style="margin-left: 25%;">26</span>
+                                    </div>
+                                    <div class="meta-date"></div>
+                                    <div class="content-box">
+                                        <p style="color: #ef4071; margin-top: -20%; margin-left: 35%;">April</p>
+                                    </div>
+                                </div>
+
+                                <div class="timeline-article timeline-article-bottom">
+                                    <div class="content-date">
+                                        <span style="margin-left: 25%">19</span>
+                                    </div>
+                                    <div class="meta-date"></div>
+                                    <div class="content-box">
+                                        <p style="color: #ef4071; margin-top: 60%; margin-left: 25%">March</p>
+                                    </div>
+                                </div>
+                                <div class="timeline-article timeline-article-top">
+                                    <div class="content-date">
+                                        <span style="margin-left: 25%;">32</span>
+                                    </div>
+                                    <div class="meta-date"></div>
+                                    <div class="content-box">
+                                        <p style="color: #ef4071; margin-top: -20%; margin-left: 18%;">February</p>
+                                    </div>
+                                </div>
+
+                                <div class="timeline-article timeline-article-bottom">
+                                    <div class="content-date">
+                                        <span style="margin-left: 25%">28</span>
+                                    </div>
+                                    <div class="meta-date"></div>
+                                    <div class="content-box">
+                                        <p style="color: #ef4071; margin-top: 60%; margin-left: 25%">January</p>
+                                    </div>
+                                </div>
+                                <div class="chart-box">
+                                    <div id="current_month" data-width="650" class="jChart chart-sm" name="CURRENT MONTH">
+                                        <div class="define-chart-row" data-color="#d9a865" title="Completed">7</div>
+                                        <div class="define-chart-row" data-color="#ee4271" title="Overdue">1</div>
+                                        <div class="define-chart-row" data-color="#40a9b5" title="Due">6</div>
+                                        <div class="define-chart-row" data-color="#00a49a" title="In Progress">4</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+            <div>
+            </div>
+        </div>
+        <div class="table-report">
+            <table class="table table-no-border" id="table-report">
+                <thead>
+                    <tr>
+                        <th class="head-table" scope="col">Project Name</th>
+                        <th class="head-table" scope="col">Start Date / End Date</th>
+                        <th class="head-table" scope="col">Status</th>
+                        <th class="head-table" scope="col">Options</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="project-table">Lorem ipsum dolor sit amet</td>
+                        <td class="dates-table">2018/05/18 - 2018/05/30</td>
+                        <td class="status-table">
+                            <span>C</span>
+                        </td>
+                        <td class="options-table">
+                            <img src="{% static 'img/chat_icon.png' %}" />
+                            <img src="{% static 'img/print_icon.png' %}" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="project-table">Lorem ipsum dolor sit amet</td>
+                        <td class="dates-table">2018/05/18 - 2018/05/30</td>
+                        <td class="status-table">
+                            <span>C</span>
+                        </td>
+                        <td class="options-table">
+                            <img src="{% static 'img/chat_icon.png' %}" />
+                            <img src="{% static 'img/print_icon.png' %}" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="project-table">Lorem ipsum dolor sit amet</td>
+                        <td class="dates-table">2018/05/18 - 2018/05/30</td>
+                        <td class="status-table">
+                            <span>C</span>
+                        </td>
+                        <td class="options-table">
+                            <img src="{% static 'img/chat_icon.png' %}" />
+                            <img src="{% static 'img/print_icon.png' %}" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="project-table">Lorem ipsum dolor sit amet</td>
+                        <td class="dates-table">2018/05/18 - 2018/05/30</td>
+                        <td class="status-table">
+                            <span>C</span>
+                        </td>
+                        <td class="options-table">
+                            <img src="{% static 'img/chat_icon.png' %}" />
+                            <img src="{% static 'img/print_icon.png' %}" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="project-table">Lorem ipsum dolor sit amet</td>
+                        <td class="dates-table">2018/05/18 - 2018/05/30</td>
+                        <td class="status-table">
+                            <span>C</span>
+                        </td>
+                        <td class="options-table">
+                            <img src="{% static 'img/chat_icon.png' %}" />
+                            <img src="{% static 'img/print_icon.png' %}" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="project-table">Lorem ipsum dolor sit amet</td>
+                        <td class="dates-table">2018/05/18 - 2018/05/30</td>
+                        <td class="status-table">
+                            <span>C</span>
+                        </td>
+                        <td class="options-table">
+                            <img src="{% static 'img/chat_icon.png' %}" />
+                            <img src="{% static 'img/print_icon.png' %}" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="project-table">Lorem ipsum dolor sit amet</td>
+                        <td class="dates-table">2018/05/18 - 2018/05/30</td>
+                        <td class="status-table">
+                            <span>C</span>
+                        </td>
+                        <td class="options-table">
+                            <img src="{% static 'img/chat_icon.png' %}" />
+                            <img src="{% static 'img/print_icon.png' %}" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="project-table">Lorem ipsum dolor sit amet</td>
+                        <td class="dates-table">2018/05/18 - 2018/05/30</td>
+                        <td class="status-table">
+                            <span>C</span>
+                        </td>
+                        <td class="options-table">
+                            <img src="{% static 'img/chat_icon.png' %}" />
+                            <img src="{% static 'img/print_icon.png' %}" />
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- /.row -->
+
+        <script src="{% static 'js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'js/chart.min.js' %}"></script>
+        <script src="{% static 'js/chart-data.js' %}"></script>
+        <script src="{% static 'js/easypiechart.js' %}"></script>
+        <script src="{% static 'js/easypiechart-data.js' %}"></script>
+        <script src="{% static 'js/bootstrap-datepicker.js' %}"></script>
+        <script src="{% static 'js/custom.js' %}"></script>
+        <script src="{% static 'js/jchart.js' %}"></script>
+        <script>
+            // window.onload = function () {
+            // 	var chart1 = document.getElementById("line-chart").getContext("2d");
+            // 	window.myLine = new Chart(chart1).Line(lineChartData, {
+            // 		responsive: true,
+            // 		scaleLineColor: "rgba(0,0,0,.2)",
+            // 		scaleGridLineColor: "rgba(0,0,0,.05)",
+            // 		scaleFontColor: "#c5c7cc"
+            // 	});
+            // };
+
+            $('.dropup.keep-open').on({
+                "shown.bs.dropdown": function () { this.closable = false; },
+                "click": function () { this.closable = false; },
+                "hide.bs.dropdown": function () { return this.closable; }
+            });
+        </script>
+        <script>
+            $(document).ready(function () {
+                $("#current_month").jChart();
+            });
+        </script>
+{% endblock content2 %}
+</body>
+
+</html>

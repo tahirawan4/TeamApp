@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+<html>
+<head>
+        {% block content %}
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Team Connect - Dashboard</title>
+	<link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+	<link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet">
+	<link href="{% static 'css/datepicker3.css' %}" rel="stylesheet">
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet">
+    
+    <link rel="stylesheet" href="{% static 'css/calendar.css' %}">
+    
+    <link href='{% static 'css/fullcalendar.css' %}' rel='stylesheet' />
+    <link href='{% static 'css/fullcalendar.print.css' %}' rel='stylesheet' media='print' />
+    
+    <script src='{% static 'jquery/jquery-1.10.2.js' %}'></script>
+    <script src='{% static 'jquery/jquery-ui.custom.min.js' %}'></script>
+
+    <script src='{% static 'js/fullcalendar.js' %}'></script>
+	
+	<!--Custom Font-->
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+	<!--[if lt IE 9]>
+	<script src="{% static 'js/html5shiv.js' %}"></script>
+	<script src="{% static 'js/respond.min.js' %}"></script>
+    <![endif]-->
+    
+
+    <link rel="stylesheet" href="{% static 'components/bootstrap2/css/bootstrap.css' %}">
+	<link rel="stylesheet" href="{% static 'components/bootstrap2/css/bootstrap-responsive.css' %}">
+    <link rel="stylesheet" href="{% static 'css/calendar.css' %}">
+    
+    <script>
+
+            $(document).ready(function() {
+                var date = new Date();
+                var d = date.getDate();
+                var m = date.getMonth();
+                var y = date.getFullYear();
+                
+                /*  className colors
+                
+                className: default(transparent), important(red), chill(pink), success(green), info(blue)
+                
+                */		
+                
+                  
+                /* initialize the external events
+                -----------------------------------------------------------------*/
+            
+                $('#external-events div.external-event').each(function() {
+                
+                    // create an Event Object (http://arshaw.com/fullcalendar/docs/event_data/Event_Object/)
+                    // it doesn't need to have a start or end
+                    var eventObject = {
+                        title: $.trim($(this).text()) // use the element's text as the event title
+                    };
+                    
+                    // store the Event Object in the DOM element so we can get to it later
+                    $(this).data('eventObject', eventObject);
+                    
+                    // make the event draggable using jQuery UI
+                    $(this).draggable({
+                        zIndex: 999,
+                        revert: true,      // will cause the event to go back to its
+                        revertDuration: 0  //  original position after the drag
+                    });
+                    
+                });
+            
+            
+                /* initialize the calendar
+                -----------------------------------------------------------------*/
+                
+                var calendar =  $('#calendar').fullCalendar({
+                    header: {
+                        left: 'title',
+                        center: 'agendaDay,agendaWeek,month',
+                        right: 'prev,next today'
+                    },
+                    editable: true,
+                    firstDay: 1, //  1(Monday) this can be changed to 0(Sunday) for the USA system
+                    selectable: true,
+                    defaultView: 'month',
+                    
+                    axisFormat: 'h:mm',
+                    columnFormat: {
+                        month: 'ddd',    // Mon
+                        week: 'ddd d', // Mon 7
+                        day: 'dddd M/d',  // Monday 9/7
+                        agendaDay: 'dddd d'
+                    },
+                    titleFormat: {
+                        month: 'MMMM yyyy', // September 2009
+                        week: "MMMM yyyy", // September 2009
+                        day: 'MMMM yyyy'                  // Tuesday, Sep 8, 2009
+                    },
+                    allDaySlot: false,
+                    selectHelper: true,
+                    select: function(start, end, allDay) {
+                        var title = prompt('Event Title:');
+                        if (title) {
+                            calendar.fullCalendar('renderEvent',
+                                {
+                                    title: title,
+                                    start: start,
+                                    end: end,
+                                    allDay: allDay
+                                },
+                                true // make the event "stick"
+                            );
+                        }
+                        calendar.fullCalendar('unselect');
+                    },
+                    droppable: true, // this allows things to be dropped onto the calendar !!!
+                    drop: function(date, allDay) { // this function is called when something is dropped
+                    
+                        // retrieve the dropped element's stored Event Object
+                        var originalEventObject = $(this).data('eventObject');
+                        
+                        // we need to copy it, so that multiple events don't have a reference to the same object
+                        var copiedEventObject = $.extend({}, originalEventObject);
+                        
+                        // assign it the date that was reported
+                        copiedEventObject.start = date;
+                        copiedEventObject.allDay = allDay;
+                        
+                        // render the event on the calendar
+                        // the last `true` argument determines if the event "sticks" (http://arshaw.com/fullcalendar/docs/event_rendering/renderEvent/)
+                        $('#calendar').fullCalendar('renderEvent', copiedEventObject, true);
+                        
+                        // is the "remove after drop" checkbox checked?
+                        if ($('#drop-remove').is(':checked')) {
+                            // if so, remove the element from the "Draggable Events" list
+                            $(this).remove();
+                        }
+                        
+                    },
+                    
+                    events: [
+                        {
+                            title: 'All Day Event',
+                            start: new Date(y, m, 1)
+                        },
+                        {
+                            id: 999,
+                            title: 'Repeating Event',
+                            start: new Date(y, m, d-3, 16, 0),
+                            allDay: false,
+                            className: 'info'
+                        },
+                        {
+                            id: 999,
+                            title: 'Repeating Event',
+                            start: new Date(y, m, d+4, 16, 0),
+                            allDay: false,
+                            className: 'info'
+                        },
+                        {
+                            title: 'Meeting',
+                            start: new Date(y, m, d, 10, 30),
+                            allDay: false,
+                            className: 'important'
+                        },
+                        {
+                            title: 'Lunch',
+                            start: new Date(y, m, d, 12, 0),
+                            end: new Date(y, m, d, 14, 0),
+                            allDay: false,
+                            className: 'important'
+                        },
+                        {
+                            title: 'Birthday Party',
+                            start: new Date(y, m, d+1, 19, 0),
+                            end: new Date(y, m, d+1, 22, 30),
+                            allDay: false,
+                        },
+                        {
+                            title: 'Click for Google',
+                            start: new Date(y, m, 28),
+                            end: new Date(y, m, 29),
+                            url: 'http://google.com/',
+                            className: 'success'
+                        }
+                    ],			
+                });
+                
+                
+            });
+        
+        </script>
+        <style>
+        
+            body {
+                margin-top: 40px;
+                text-align: center;
+                font-size: 14px;
+                font-family: "Helvetica Nueue",Arial,Verdana,sans-serif;
+                background-color: #DDDDDD;
+                }
+                
+            #wrap {
+                width: 1100px;
+                margin: 0 auto;
+                }
+                
+            #external-events {
+                float: left;
+                width: 150px;
+                padding: 0 10px;
+                text-align: left;
+                }
+                
+            #external-events h4 {
+                font-size: 16px;
+                margin-top: 0;
+                padding-top: 1em;
+                }
+                
+            .external-event { /* try to mimick the look of a real event */
+                margin: 10px 0;
+                padding: 2px 4px;
+                background: #3366CC;
+                color: #fff;
+                font-size: .85em;
+                cursor: pointer;
+                }
+                
+            #external-events p {
+                margin: 1.5em 0;
+                font-size: 11px;
+                color: #666;
+                }
+                
+            #external-events p input {
+                margin: 0;
+                vertical-align: middle;
+                }
+        
+            #calendar {
+        /* 		float: right; */
+                margin: 0 auto;
+                width: 900px;
+                background-color: #FFFFFF;
+                  border-radius: 6px;
+                box-shadow: 0 1px 2px #C3C3C3;
+                }
+        
+        </style>
+
+	<style type="text/css">
+		.btn-twitter {
+			padding-left: 30px;
+			background: rgba(0, 0, 0, 0) url(https://platform.twitter.com/widgets/images/btn.27237bab4db188ca749164efd38861b0.png) -20px 6px no-repeat;
+			background-position: -20px 11px !important;
+		}
+		.btn-twitter:hover {
+			background-position:  -20px -18px !important;
+		}
+	</style>
+    <style>
+        #myInput {
+            padding: 20px;
+            margin-top: -6px;
+            border: 0;
+            border-radius: 0;
+            background: #f1f1f1;
+        }
+    </style>
+        {% endblock content %}
+
+</head>
+<body style="overflow-x: hidden">
+        {% block content2 %}
+
+    <h1
+     style="margin-left: 15%;
+     text-align: center; color: #49a9b7; font-family: Myriad Arabic; font-weight: bolder;">
+     CALENDAR
+    </h1>
+
+    <hr style="width: 1100px; margin-left: 20%; color: #40a9b5;
+        background-color: #40a9b5;
+        height: 3px;
+        margin-top: -5px">
+
+    
+    
+    <div class="container" style="margin-left: 20%">
+        <div class="dropdown">
+            <button class="btn dropdown-toggle" style="background-color: #d9a865; color: white" data-toggle="dropdown">
+                Filter  
+        </div>
+        <div class="dropdown">
+            <button class="btn dropdown-toggle" style="background-color: #d0d2d3" type="button" data-toggle="dropdown">By Users
+            <span class="caret"></span></button>
+            <ul class="dropdown-menu">
+                <input class="form-control" id="myInput" type="text" placeholder="Search..">
+                <li><a href="#">HTML</a></li>
+                <li><a href="#">CSS</a></li>
+                <li><a href="#">JavaScript</a></li>
+                <li><a href="#">jQuery</a></li>
+                <li><a href="#">Bootstrap</a></li>
+                <li><a href="#">Angular</a></li>
+            </ul>
+        </div>
+        <div class="dropdown">
+            <button class="btn dropdown-toggle" style="background-color: #d0d2d3" type="button" data-toggle="dropdown">By Type
+                <span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                    <input class="form-control" id="myInput" type="text" placeholder="Search..">
+                    <li><a href="#">HTML</a></li>
+                    <li><a href="#">CSS</a></li>
+                    <li><a href="#">JavaScript</a></li>
+                    <li><a href="#">jQuery</a></li>
+                    <li><a href="#">Bootstrap</a></li>
+                    <li><a href="#">Angular</a></li>
+                </ul>
+        </div>
+        <div class="dropdown">
+                <button class="btn dropdown-toggle" style="background-color: #d0d2d3" type="button" data-toggle="dropdown">By Project
+                <span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                    <input class="form-control" id="myInput" type="text" placeholder="Search..">
+                    <li><a href="#">HTML</a></li>
+                    <li><a href="#">CSS</a></li>
+                    <li><a href="#">JavaScript</a></li>
+                    <li><a href="#">jQuery</a></li>
+                    <li><a href="#">Bootstrap</a></li>
+                    <li><a href="#">Angular</a></li>
+                </ul>
+        </div>
+       
+        <div class="dropdown" style="margin-left: 35%">
+            <button class="btn dropdown-toggle" style="background-color: #d9a865; color: white" data-toggle="dropdown">
+                Day  
+            </button>
+            <button class="btn dropdown-toggle" style="background-color: #40a9b5; color: white" data-toggle="dropdown">
+                Week  
+            </button>
+            <button class="btn dropdown-toggle" style="background-color: #d9a865; color: white" data-toggle="dropdown">
+                Moonth  
+            </button>
+        </div>
+        
+    </div>
+
+
+
+
+
+
+
+
+    <div class="container" style="margin-left: 18%">
+            
+            <div style="background-color: #40a9b5; border-radius: 10px">
+        
+                <div class="form-inline" >
+                    <p align="center"><a style="color: white; font-size: 40px; margin-right: 10%; 
+                        font-family: Myriad Arabic; font-weight: bolder;"> < </a>
+                    <a style="color: white; font-size: 40px; 
+                    font-family: Myriad Arabic; font-weight: bolder;">Week 2</a>
+                    <a style="color: white; font-size: 40px; margin-left: 10%;
+                    font-family: Myriad Arabic; font-weight: bolder;"> > </a></p>
+                    
+                </div>
+        
+                
+            </div>
+        
+            <div id='wrap'>
+
+                <div id='calendar'></div>
+                    
+                <div style='clear:both'></div>
+            </div>
+            <!-- <div class="row" >
+                <div class="span9" >
+                    <div id="calendar" ></div>
+                </div>
+
+            </div> -->
+        
+            <!-- <div class="clearfix"></div>
+            <br><br>
+            
+            <br><br>
+        
+            <div id="disqus_thread"></div> -->
+            <!-- <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+         -->
+            <!-- <div class="modal hide fade" id="events-modal">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h3>Event</h3>
+                </div>
+                <div class="modal-body" style="height: 400px">
+                </div>
+                <div class="modal-footer">
+                    <a href="#" data-dismiss="modal" class="btn">Close</a>
+                </div>
+            </div> -->
+        
+            <script type="text/javascript" src="components/jquery/jquery.min.js"></script>
+            <script type="text/javascript" src="components/underscore/underscore-min.js"></script>
+            <script type="text/javascript" src="components/bootstrap2/js/bootstrap.min.js"></script>
+            <script type="text/javascript" src="components/jstimezonedetect/jstz.min.js"></script>
+            <script type="text/javascript" src="js/language/bg-BG.js"></script>
+            <script type="text/javascript" src="js/language/nl-NL.js"></script>
+            <script type="text/javascript" src="js/language/fr-FR.js"></script>
+            <script type="text/javascript" src="js/language/de-DE.js"></script>
+            <script type="text/javascript" src="js/language/el-GR.js"></script>
+            <script type="text/javascript" src="js/language/it-IT.js"></script>
+            <script type="text/javascript" src="js/language/hu-HU.js"></script>
+            <script type="text/javascript" src="js/language/pl-PL.js"></script>
+            <script type="text/javascript" src="js/language/pt-BR.js"></script>
+            <script type="text/javascript" src="js/language/ro-RO.js"></script>
+            <script type="text/javascript" src="js/language/es-CO.js"></script>
+            <script type="text/javascript" src="js/language/es-MX.js"></script>
+            <script type="text/javascript" src="js/language/es-ES.js"></script>
+            <script type="text/javascript" src="js/language/es-CL.js"></script>
+            <script type="text/javascript" src="js/language/es-DO.js"></script>
+            <script type="text/javascript" src="js/language/ru-RU.js"></script>
+            <script type="text/javascript" src="js/language/sk-SR.js"></script>
+            <script type="text/javascript" src="js/language/sv-SE.js"></script>
+            <script type="text/javascript" src="js/language/zh-CN.js"></script>
+            <script type="text/javascript" src="js/language/cs-CZ.js"></script>
+            <script type="text/javascript" src="js/language/ko-KR.js"></script>
+            <script type="text/javascript" src="js/language/zh-TW.js"></script>
+            <script type="text/javascript" src="js/language/id-ID.js"></script>
+            <script type="text/javascript" src="js/language/th-TH.js"></script>
+            <script type="text/javascript" src="js/calendar.js"></script>
+            <script type="text/javascript" src="js/app.js"></script>
+        
+            <script type="text/javascript">
+                var disqus_shortname = 'bootstrapcalendar'; // required: replace example with your forum shortname
+                (function() {
+                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                })();
+            </script>
+        </div>
+
+
+
+
+
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/chart.min.js"></script>
+	<script src="js/chart-data.js"></script>
+	<script src="js/easypiechart.js"></script>
+	<script src="js/easypiechart-data.js"></script>
+	<script src="js/bootstrap-datepicker.js"></script>
+	<script src="js/custom.js"></script>
+	<script>
+		window.onload = function () {
+	var chart1 = document.getElementById("line-chart").getContext("2d");
+	window.myLine = new Chart(chart1).Line(lineChartData, {
+	responsive: true,
+	scaleLineColor: "rgba(0,0,0,.2)",
+	scaleGridLineColor: "rgba(0,0,0,.05)",
+	scaleFontColor: "#c5c7cc"
+	});
+};
+	</script>
+        {% endblock content2 %}
+
+		
+</body>
+</html>

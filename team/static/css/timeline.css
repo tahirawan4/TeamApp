@@ -1,0 +1,147 @@
+.main-timeline-section{
+    position: relative; 
+    width: 110%;  
+    margin: auto; 
+    height: 500px;
+    margin-top: -5%;
+  }
+  
+  .main-timeline-section .timeline-start,
+  .main-timeline-section .timeline-end{
+    position: absolute;
+    background:#49a8b6;
+    border-radius:100px;
+    top:50%;
+    transform: translateY(-50%);
+    width:30px;
+    height:30px;
+  }
+
+  .main-timeline-section .timeline-end{
+    right:0px;
+  }
+
+  .main-timeline-section .conference-center-line{
+    position: absolute;
+    width: 81%;
+    height:5px;
+    top:30%;
+    transform: translateY(-50%);
+    background:#00adee;
+  }
+
+  .timeline-article{
+      width: 20%;
+      position: relative;
+      min-height: 300px;
+      float:right;
+  }
+
+  .timeline-article .content-date{
+      position: absolute;
+      top: 20%;
+      left: -30px; 
+      font-size: 50px;
+  }
+
+  .timeline-article .meta-date{
+      position: absolute;
+      top: 50%;
+      left: 0px;
+      transform: translateY(-50%); 
+      width:20px;
+      height:20px;
+      border-radius: 100%;
+      background:#49a8b6;
+      border:1px solid #49a8b6;
+  }
+
+  .content-box {
+    font-size: 25px;
+    font-weight: bold
+  }
+
+  .timeline-article .content-box {
+    width: 180px;
+    position: absolute;
+    top: 60%;
+    left: -80px; 
+    padding: 10px;
+  }
+
+  .timeline-article-bottom .content-date{
+    top: 59%;
+  }
+
+  .timeline-article-bottom .content-box{
+    top: 0%;
+  }
+
+  #panel-timeline {
+      margin-left: 25%;
+      width: 65%;
+      margin-top: 20px;
+  }
+
+  .text-top {
+      color: #49a9b7;
+      font-size: 25px;
+      font-weight: bold;
+      margin-left: 18%;
+  }
+
+  .table-report {
+    margin-left: 25%;
+  }
+
+ .table-report tr td, table tr th{
+    background-color: #f1f4f7 !important;
+ }
+
+ .table-no-border>thead>tr>th, 
+ .table-no-border>tbody>tr>th, 
+ .table-no-border>tfoot>tr>th, 
+ .table-no-border>thead>tr>td, 
+ .table-no-border>tbody>tr>td, 
+ .table-no-border>tfoot>tr>td,
+ .table-no-border>tbody,
+ .table-no-border>thead,
+ .table-no-border>tfoot{
+   border-top: none !important; 
+   border-bottom: none !important; 
+ }
+
+ .head-table {
+   color: #49a8b6;
+   font-weight: normal;
+   font-size: 15px;
+   text-align: left;
+ }
+
+ .project-table {
+   font-size: 20px;
+   width: 30%;
+ }
+
+ .dates-table {
+  font-size: 20px;
+  width: 28%;
+}
+
+.status-table {
+  color: white;
+  font-size: 16px;
+  width: 10%;
+  text-align: left;
+}
+
+.status-table span {
+  background-color: #ef4071;
+  padding: 10%;
+  margin-left: 7%;
+}
+
+.options-table img {
+  height: 20px;
+  margin-right: 7%;
+}
