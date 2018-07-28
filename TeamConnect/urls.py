@@ -22,10 +22,10 @@ from django.contrib.auth.views import login, logout
 from chat.views import index
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
+    # url(r'^admin/', admin.site.urls),
     url(r'', include('team.urls')),
-    url('', index),
-    url('accounts/login/', login, name='login'),
+    url(r'^$', index),
+    url('accounts/login/$', login, name='login'),
     url('accounts/logout/', logout, name='logout'),
     url('admin/', admin.site.urls),
 
